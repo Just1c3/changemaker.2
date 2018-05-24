@@ -19,6 +19,10 @@ body {
 
 
 }
+#cancel{
+    float: right;
+    margin-right: 15px;
+}
 
 #title{
     width: 40%;
@@ -37,11 +41,18 @@ body {
     margin-right:-4px;
     opacity: .75;
 }
+
+#signin:hover{
+    background-color: gray;
+}
 #createacc{
     height: 30px;
     position: relative;
     right:0px;
     opacity: .75;
+}
+#createacc:hover{
+    background-color: gray;
 }
 
 #head{

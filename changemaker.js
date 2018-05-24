@@ -28,8 +28,8 @@ $(document).ready(function(){
 
     $("#enterbutton").on("click",function(){
         var amount=$("#enterbutton").data();
-        var email=$("#email").text();
-        var password=$("#password").text();
+        var email=$("#email").val();
+        var password=$("#password").val();
         if(amount==1){
             getuser(email);
         }else{
@@ -37,6 +37,10 @@ $(document).ready(function(){
         }
         $("#mask").hide();
         $("#enter").hide();
+    });
+    $("#cancel").on("click",function(){
+       $("#enter").hide();
+       $("#mask").hide();
     });
 
 });
@@ -52,12 +56,13 @@ function adduser(email,password){
         }),
         dataType: 'json',
         success: function(data){
-            runMySuccessFunction(data);
+            console.log(data)
+            //runMySuccessFunction(data);
         },
         error: function(){
             alert("failed");
         },
-        url: 'https://slkidsbackend.herokuapp.com/[appName]/api/users'
+        url: 'https://slkidsbackend.herokuapp.com/methpain/api/users'
     });
 }
 
@@ -67,12 +72,13 @@ function getuser(email){
         type: 'GET',
         dataType: 'json',
         success: function(data){
-            runMySuccessFunction(data);
+            console.log(data)
+            // runMySuccessFunction(data);
         },
         error: function(){
             alert("failed");
         },
-        url: 'https://slkidsbackend.herokuapp.com/[appName]/api/users/' + email
+        url: 'https://slkidsbackend.herokuapp.com/methpain/api/users/' + email
     });
 
 }
