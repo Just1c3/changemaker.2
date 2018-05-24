@@ -8,12 +8,31 @@
     <title>Stop the MethPain</title>
 </head>
 <body>
-<div id="mask"></div>
-<div id="enter">
-    <table >
-        <td>
-            <tr></tr>
-        </td>
+<div id="mask" class="hide"></div>
+<div id="enter" class="hide">
+    <table cellpadding="5"  id="entertable">
+        <tr>
+            <td>
+                <div id="entername"></div>
+            </td>
+        </tr>
+        <tr>
+            <td><input id="email"></td>
+            <td><input id="password"></td>
+            <td><button id="enterbutton">Submit</button></td>
+        </tr>
+    </table>
+</div>
+<div id="search" class="hide">
+    <table>
+        <tr>
+            <!--<div class="dropdown">-->
+            <!--<button class="dropbtn">Kind Of Food</button>-->
+            <!--<div class="dropdown-content" id="first">-->
+            <!--</div>-->
+            <!--</div>-->
+        </tr>
+        <tr></tr>
 
     </table>
 </div>
@@ -21,9 +40,10 @@
     <button id="signin">Sign In</button>
     <button id="createacc">Create Account</button>
 </div>
-<img id="cloud" src="images/Cloud.png">
+<img id="cloud" class="hide" src="images/Cloud.png">
 <div id="title">Whats To Eat</div>
 <button align="center" id="calculate">Calculate Methane Production</button>
+
 
 </body>
 </html>
