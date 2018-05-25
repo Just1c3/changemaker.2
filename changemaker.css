@@ -173,6 +173,17 @@ body {
     color: #4CAF50;
     position: relative;
     width:400px;
-    top:-25px;
+    top:-27px;
     left:48%;
+    font-weight: bolder;
+    font-size: x-large;
+}
+#map {
+    height: 100%;
+    width:100%;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }

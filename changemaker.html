@@ -2,12 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="changemaker.js"></script>
     <link rel="stylesheet" href="changemaker.css"/>
     <title>Stop the MethPain</title>
 </head>
 <body>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfMAXRqxsrULAhgwvc2bKNEjqI4SvChJE&callback=initMap"
+        async defer></script>
 <div id="mask" class="hide"></div>
 <div id="enter" class="hide">
     <button id="cancel">X</button>
@@ -27,6 +30,7 @@
     </table>
 </div>
 <div id="search" class="hide">
+    <div id="map"></div>
     <table>
         <tr>
             <div class="dropdown">
@@ -46,7 +50,7 @@
     <button class="headerbuttons" id="createacc">Create Account</button>
     <button class="headerbuttons" id="home">Home</button>
     <button class="headerbuttons"   id="usinfo">About Us</button>
-    <div id="extratitle">Whats To Eat</div>
+    <div id="extratitle" class="hide">Whats To Eat</div>
 </div>
 <img id="cloud" class="hide" src="images/Cloud.png">
 <div id="title">Whats To Eat</div>

@@ -88,11 +88,12 @@ function showenters(){
     $("#enter").show();
 }
 
-// function setupdropdowns(){
-//     for(var i=0;i<Listofkinds.length;i++){
-//         var name= Listofkinds[i];
-//         $("#first").append("<div class='dropdown'><button class='dropbtn'>"+name+"</button><div class='dropdown-content' id='first'></div></div>")
-//     }
-//
-// }
-
+var map;
+function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat:37.8715926, lng: -122.272747},
+        zoom: 15
+    });
+    var positioning= {lat:37.8715926, lng: -122.272747};
+    var marker =  new google.maps.Marker({  position: positioning, map: map});
+}
