@@ -88,6 +88,9 @@ function showenters(){
     $("#enter").show();
 }
 
+var addresses=[];
+var names=[];
+
 var map;
 function initMap() {
     var myStyles =[
