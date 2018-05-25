@@ -90,10 +90,30 @@ function showenters(){
 
 var map;
 function initMap() {
+    var myStyles =[
+        {
+            featureType: "poi",
+            elementType: "labels",
+            stylers: [
+                { visibility: "off" }
+            ]
+        }
+    ];
+    var infowindow = new google.maps.InfoWindow({
+        content: "Saigon <br><button>Calculate</button>"
+    });
+
     map = new google.maps.Map(document.getElementById('map'), {
         center: {lat:37.8715926, lng: -122.272747},
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        styles: myStyles,
         zoom: 15
     });
-    var positioning= {lat:37.8715926, lng: -122.272747};
-    var marker =  new google.maps.Marker({  position: positioning, map: map});
+
+
+    var positioning= {lat:37.8713659, lng: -122.26756360000002};
+    var marker =  new google.maps.Marker({  position: positioning,content:"Saigon", map: map, label:"A"});
+    marker.addListener('click', function() {
+        infowindow.open(map, marker);
+    });
 }
