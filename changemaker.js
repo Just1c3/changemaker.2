@@ -119,11 +119,14 @@ function initMap() {
         });
             var positioning= addresses[i];
             eval("var marker" + i + " = new google.maps.Marker({  position: positioning,content:names[i], map: map});");
-        }
-
+            console.log(marker0);
         eval("marker" + i).addListener('click', function() {
-        infowindow.open(map, eval("marker"+i));
-    });
+            infowindow.open(map, eval("marker"+i));
+        });
+
+    }
+
+
 
 
 
