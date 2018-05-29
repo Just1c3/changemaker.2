@@ -1,6 +1,7 @@
 $(document).ready(function(){
     $(".hide").hide();
     $("#calculate").on("click",function(){
+
         $("#cloud").show();
         $("#cloud").animate({"height":"150%", "width":"150%","left":"-30%", "top":"-25%"},1000);
         $("#cloud").delay(400).fadeOut(1000);
@@ -88,8 +89,8 @@ function showenters(){
     $("#enter").show();
 }
 
-var addresses=[];
-var names=[];
+var addresses=[{lat:37.8713659, lng: -122.26756360000002},{lat:37.87024, lng: -122.26711999999998}];
+var names=["Saigon","Halal Guys"];
 
 var map;
 function initMap() {
@@ -102,9 +103,7 @@ function initMap() {
             ]
         }
     ];
-    var infowindow = new google.maps.InfoWindow({
-        content: "Saigon <br><button>Calculate</button>"
-    });
+
 
     map = new google.maps.Map(document.getElementById('map'), {
         center: {lat:37.8715926, lng: -122.272747},
@@ -114,9 +113,17 @@ function initMap() {
     });
 
 
-    var positioning= {lat:37.8713659, lng: -122.26756360000002};
-    var marker =  new google.maps.Marker({  position: positioning,content:"Saigon", map: map, label:"A"});
-    marker.addListener('click', function() {
-        infowindow.open(map, marker);
+    for(var i=0;i<names.length;i++){
+        eval("var infowindow" + i + "= new google.maps.InfoWindow({content: names[i]+'<br><button>Calculate</button>'});");
+        // var infowindow = new google.maps.InfoWindow({content: names[i]+"<br><button>Calculate</button>"});
+            var positioning= addresses[i];
+            eval("var marker" + i + " = new google.maps.Marker({  position: positioning,content:names[i], map: map});");
+        }
+
+        eval("marker" + i).addListener('click', function() {
+        eval("infowindow"+i).open(map, eval("marker"+i));
     });
+
+
+
 }
