@@ -45,7 +45,10 @@ body {
     margin-left: -4px;
 }
 .headerbuttons{
-    height: 30px;
+    background-color:black;
+    color: white;
+    border: none;
+    height: 45px;
     position:relative;
     opacity: .75;
 }
