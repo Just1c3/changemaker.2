@@ -14,7 +14,7 @@ body {
     margin-right: 40%;
     margin-left: 40%;
     border-radius: 15px;
-    position: absolute;
+    position: relative;
     top: 160px;
 
 
@@ -51,6 +51,7 @@ body {
     height: 45px;
     position:relative;
     opacity: .75;
+    font-size: large;
 }
 .headerbuttons:hover{
     background-color: gray;
@@ -69,7 +70,7 @@ body {
     text-align: left;
     position: relative;
     background-color: black;
-    height: 30px;
+    height: 45px;
     margin-top: 0;
     opacity: .7;
 }
