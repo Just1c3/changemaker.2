@@ -114,14 +114,15 @@ function initMap() {
 
 
     for(var i=0;i<names.length;i++){
-        eval("var infowindow" + i + "= new google.maps.InfoWindow({content: names[i]+'<br><button>Calculate</button>'});");
-        // var infowindow = new google.maps.InfoWindow({content: names[i]+"<br><button>Calculate</button>"});
+        var infowindow = new google.maps.InfoWindow({
+            content: names[i]+"<br><button>Calculate</button>"
+        });
             var positioning= addresses[i];
             eval("var marker" + i + " = new google.maps.Marker({  position: positioning,content:names[i], map: map});");
         }
 
         eval("marker" + i).addListener('click', function() {
-        eval("infowindow"+i).open(map, eval("marker"+i));
+        infowindow.open(map, eval("marker"+i));
     });
 
 
