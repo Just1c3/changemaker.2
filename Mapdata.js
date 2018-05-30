@@ -33,7 +33,8 @@ function initMap() {
 
 
     var infowindow2 = new google.maps.InfoWindow({
-        content: "Halal Guys<br><button>Calculate</button>"
+        content: "Halal Guys<br>" +
+        ""
     });
     var marker2 = new google.maps.Marker({  position: {lat:37.87024, lng: -122.26711999999998},content:"Halal Guys", map: map});
     marker2.addListener('click', function() {
@@ -42,7 +43,8 @@ function initMap() {
 
 
     var infowindow3 = new google.maps.InfoWindow({
-        content: "Bongo Burger<br><button>Calculate</button><button id='exit'>x</button>"
+        content: "Bongo Burger<br>" +
+        "<div id='bongo1'>Veggie Burger</div><div id='bongo2'>Some Other Thing</divid>"
     });
     var marker3 = new google.maps.Marker({  position: {lat:37.8702814, lng: -122.26645589999998},content:"Bongo Burger", map: map});
     marker3.addListener('click', function() {
