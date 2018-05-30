@@ -1,5 +1,6 @@
-var addresses=[{lat:37.8713659, lng: -122.26756360000002},{lat:37.87024, lng: -122.26711999999998}];
-var names=["Saigon","Halal Guys"];
+var addresses=[{lat:37.8713659, lng: -122.26756360000002},{lat:37.87024, lng: -122.26711999999998},{lat:37.873984,
+    lng: -122.268834}, {lat:37.872238, lng: -122.268868} ];
+var names=["Saigon","Halal Guys","Sweet Green", "Tender Green"];
 
 function initMap() {
     var myStyles =[
@@ -49,6 +50,20 @@ function initMap() {
     });
 
 
+    var infowindow4 = new google.maps.InfoWindow({
+        content: "Sweet Green<br><button>Calculate</button><button id='exit'>x</button>"
+    });
+    var marker4 = new google.maps.Marker({  position: {lat:37.873984, lng: -122.268834},content:"Sweet Green", map: map});
+    marker4.addListener('click', function() {
+        infowindow4.open(map,marker4);
+    });
 
+    var infowindow5 = new google.maps.InfoWindow({
+        content: "Tender Green<br><button>Calculate</button><button id='exit'>x</button>"
+    });
+    var marker5 = new google.maps.Marker({  position: {lat:37.872238, lng: -122.268868},content:"Tender Green", map: map});
+    marker5.addListener('click', function() {
+        infowindow5.open(map,marker5);
+    });
 
 }
