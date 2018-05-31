@@ -106,7 +106,9 @@ function getuser(email){
             console.log("usergotten");
             console.log(data);
             logedInUserId = data._id;
-            loggedInUserScore = data.score;
+            if(data.score){
+                loggedInUserScore = data.score;
+            }
             console.log(logedInUserId);
 
         },
@@ -120,8 +122,6 @@ function getuser(email){
 
 
 function addfield(amount) {
-    console.log("jigd");
-
     if (loggedInUserScore > 0) {
         $.ajax({
             type: 'PUT',
@@ -131,6 +131,23 @@ function addfield(amount) {
             }),
             success: function (data) {
                 console.log(data);
+
+            },
+            error: function () {
+                alert("failed");
+            },
+            url: 'https://slkidsbackend.herokuapp.com/methpain/api/users/' + logedInUserId
+        });
+    }else{
+        $.ajax({
+            type: 'PUT',
+            dataType: 'json',
+            data: JSON.stringify({
+                "score": amount
+            }),
+            success: function (data) {
+                console.log(data);
+                console.log("added without points")
             },
             error: function () {
                 alert("failed");
@@ -139,20 +156,6 @@ function addfield(amount) {
         });
     }
 
-    $.ajax({
-        type: 'PUT',
-        dataType: 'json',
-        data: JSON.stringify({
-            "score": amount
-        }),
-        success: function (data) {
-            console.log(data);
-        },
-        error: function () {
-            alert("failed");
-        },
-        url: 'https://slkidsbackend.herokuapp.com/methpain/api/users/' + logedInUserId
-    });
 }
 
 function showenters(){
