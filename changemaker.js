@@ -1,3 +1,7 @@
+var logedInUserId="";
+var loggedInUserScore = 0;
+
+
 $(document).ready(function(){
     $(".hide").hide();
     $("#calculate").on("click",function(){
@@ -50,6 +54,21 @@ $(document).ready(function(){
 });
 
 
+
+
+function displaypoint(amount,name){
+    $("#showstats").show();
+    $("#statsintro").text("This meal from "+ name+" will reward you "+amount+" trees as you will have saved "+(amount*2.5)+" lbs of CO2, "+(amount*24)+" ft2 of land, and "+(amount*133)+" gallons of water");
+    document.getElementById("displaytrees").innerHTML="";
+    for(var i=0;i<amount;i++){
+        document.getElementById("displaytrees").innerHTML+="<i class=\"fa fa-tree\" style='color:darkgreen;font-size:60px'></i>";
+    }
+    $("#validate").on("click",function(){
+        addfield(amount);
+    })
+
+}
+
 function adduser(email,password){
     $.ajax({
         type: 'POST',
@@ -60,28 +79,18 @@ function adduser(email,password){
         }),
         dataType: 'json',
         success: function(data){
-            console.log(data)
-            //runMySuccessFunction(data);
+            console.log("usercreated");
+            logedInUserId = data._id;
+            console.log(data);
+            console.log(logedInUserId);
+
         },
         error: function(){
             alert("failed");
         },
         url: 'https://slkidsbackend.herokuapp.com/methpain/api/users'
     });
-
 }
-
-function displaypoint(amount,name){
-    $("#showstats").show();
-    $("#statsintro").text("This meal from "+ name+" will reward you "+amount+" trees as you will have saved "+(amount*2.5)+" lbs of CO2, "+(amount*24)+" ft2 of land, and "+(amount*133)+" gallons of water");
-    document.getElementById("displaytrees").innerHTML="";
-    for(var i=0;i<amount;i++){
-        document.getElementById("displaytrees").innerHTML+="<i class=\"fa fa-tree\" style='color:darkgreen;font-size:60px'></i>";
-    }
-
-}
-
-
 
 
 
@@ -90,8 +99,12 @@ function getuser(email){
         type: 'GET',
         dataType: 'json',
         success: function(data){
-            console.log(data)
-            // runMySuccessFunction(data);
+            console.log("usergotten");
+            console.log(data);
+            logedInUserId = data._id;
+            loggedInUserScore = data.score;
+            console.log(logedInUserId);
+
         },
         error: function(){
             alert("failed");
@@ -99,6 +112,43 @@ function getuser(email){
         url: 'https://slkidsbackend.herokuapp.com/methpain/api/users/' + email
     });
 
+}
+
+
+function addfield(amount) {
+    console.log("jigd");
+
+    if (loggedInUserScore > 0) {
+        $.ajax({
+            type: 'PUT',
+            dataType: 'json',
+            data: JSON.stringify({
+                "score": (amount + loggedInUserScore)
+            }),
+            success: function (data) {
+                console.log(data);
+            },
+            error: function () {
+                alert("failed");
+            },
+            url: 'https://slkidsbackend.herokuapp.com/methpain/api/users/' + logedInUserId
+        });
+    }
+
+    $.ajax({
+        type: 'PUT',
+        dataType: 'json',
+        data: JSON.stringify({
+            "score": amount
+        }),
+        success: function (data) {
+            console.log(data);
+        },
+        error: function () {
+            alert("failed");
+        },
+        url: 'https://slkidsbackend.herokuapp.com/methpain/api/users/' + logedInUserId
+    });
 }
 
 function showenters(){
