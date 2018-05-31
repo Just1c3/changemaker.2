@@ -1,17 +1,20 @@
 $(document).ready(function(){
     $(".hide").hide();
     $("#calculate").on("click",function(){
-
         $("#cloud").show();
         $("#cloud").animate({"height":"150%", "width":"150%","left":"-30%", "top":"-25%"},1000);
-        $("#cloud").delay(400).fadeOut(1000);
+        $("#cloud").delay(400).fadeOut(400);
         $("body").css({"background-image":"url(http://img1.mashed.com/img/gallery/7-vegetables-you-should-be-eating-and-7-you-shouldnt/intro-1499279662.jpg)","background-size":"100%"});
         $("#search").show();
         $(this).hide();
         $("#title").css("color","green")
     });
-
-
+    $("#cancelshow").on("click",function(){
+       $(this).parent().hide();
+    });
+    $("#home").on("click",function(){
+        location.reload();
+    });
     $("#signin").on("click", function(){
         showenters();
         $("#email").attr("placeholder","Email");
@@ -65,7 +68,21 @@ function adduser(email,password){
         },
         url: 'https://slkidsbackend.herokuapp.com/methpain/api/users'
     });
+
 }
+
+function displaypoint(amount,name){
+    $("#showstats").show();
+    $("#statsintro").text("This meal from "+ name+" will reward you "+amount+" trees as you will have saved "+(amount*2.5)+" lbs of CO2, "+(amount*24)+" ft2 of land, and "+(amount*133)+" gallons of water");
+    document.getElementById("displaytrees").innerHTML="";
+    for(var i=0;i<amount;i++){
+        document.getElementById("displaytrees").innerHTML+="<i class=\"fa fa-tree\" style='color:darkgreen;font-size:60px'></i>";
+    }
+
+}
+
+
+
 
 
 function getuser(email){

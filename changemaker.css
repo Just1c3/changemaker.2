@@ -191,3 +191,35 @@ html, body {
     margin: 0;
     padding: 0;
 }
+.bolden{
+    font-weight: bolder;
+}
+.choose{
+    border: none;
+}
+.choose:hover{
+    background-color: lightgray;
+}
+#showstats{
+    z-index: 12;
+    width: 30%;
+    margin-left: 35%;
+    height:30%;
+    top: 30%;
+    position: absolute;
+    background-color: lightgreen;
+    text-align: center;
+}
+
+.i{
+    color: darkgreen;
+}
+#cancelshow {
+    background-color: sandybrown;
+    float: right;
+}
+#statsintro{
+    font-weight: bold;
+    font-size: 20px;
+    /*color: ;*/
+}

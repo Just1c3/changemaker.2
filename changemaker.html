@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="changemaker.js"></script>
     <script src="Mapdata.js"></script>
@@ -28,21 +29,23 @@
         </tr>
     </table>
 </div>
+<div id="showstats" class="hide">
+    <button id="cancelshow">X</button>
+    <table>
+        <tr>
+            <td id="statsintro"></td>
+        </tr>
+        <tr>
+            <td id="displaytrees"></td>
+        </tr>
+        <tr>
+            <td><button id="validate">Confirm</button></td>
+        </tr>
+    </table>
+</div>
 <div id="search" class="hide">
     <div id="map"></div>
-    <!--<table>-->
-        <!--<tr>-->
-            <!--<div class="dropdown">-->
-            <!--<button class="dropbtn">Kind Of Food</button>-->
-            <!--<div class="dropdown-content" id="first">-->
-                <!--<div id="vegan">Vegan Option</div>-->
-                <!--<div id="meat">Meat Option</div>-->
-            <!--</div>-->
-            <!--</div>-->
-        <!--</tr>-->
-        <!--<tr></tr>-->
 
-    <!--</table>-->
 </div>
 <div id="head">
     <button class="headerbuttons" id="signin">Sign In</button>
