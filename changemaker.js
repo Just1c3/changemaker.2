@@ -156,3 +156,8 @@ function showenters(){
     $("#enter").show();
 }
 
+
+var anoosh="";
+var kalen="";
+var mission="";
+
