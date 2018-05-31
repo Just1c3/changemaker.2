@@ -22,7 +22,7 @@ function initMap() {
 
     var infowindow1 = new google.maps.InfoWindow({
         content: "<div class='bolden'>Saigon</div>" +
-        "<button class='choose' onclick='displaypoint(1,\'Saigon\')'>Veggie Sandwich</button><br><button class='choose'>Tofu Combo Platter</button>"
+        "<button class='choose' onclick='displaypoint(1,&quot;Saigon&quot;)'>Veggie Sandwich</button><br><button class='choose'>Tofu Combo Platter</button>"
     });
     var marker1 = new google.maps.Marker({  position:{lat:37.8713659, lng: -122.26756360000002} ,content:"Saigon", map: map});
     marker1.addListener('click', function() {
