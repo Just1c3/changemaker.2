@@ -24,10 +24,10 @@ $(document).ready(function(){
         $("#email").attr("placeholder","Email");
         $("#password").attr("placeholder","Password");
         $("#entername").text("Sign In");
-        $("#enterbutton").data("1");
+        $("#enterbutton").attr('data',1);
     });
     $("#createacc").on("click", function(){
-        $("#enterbutton").data("2");
+        $("#enterbutton").attr('data',2);
         $("#email").attr("placeholder","Email");
         $("#password").attr("placeholder","Password");
         $("#entername").text("Create Account");
@@ -35,13 +35,17 @@ $(document).ready(function(){
     });
 
     $("#enterbutton").on("click",function(){
-        var amount=$("#enterbutton").data();
+        var amount=$("#enterbutton").attr('data');
+        console.log(amount);
         var email=$("#email").val();
         var password=$("#password").val();
         if(amount==1){
             getuser(email);
-        }else{
+        }else if(amount==2){
+            console.log("eee");
             adduser(email,password);
+        } else {
+            console.log("error!");
         }
         $("#mask").hide();
         $("#enter").hide();
