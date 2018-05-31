@@ -113,7 +113,7 @@ function initMap() {
 
     var infowindow9 = new google.maps.InfoWindow({
         content: "<div class='bolden'>Trader Joe's</div>" +
-        "<button onclick='displaypoint(1,&quot;Trader Joes&quot;)' class='choose'>Item 1</button><br><button onclick='displaypoint(1,&quot;Trader Joes&quot;)' class='choose'>Item 2</button>"
+        "<button onclick='displaypoint(2,&quot;Trader Joes&quot;)' class='choose'>Celery Stalks</button><br><button onclick='displaypoint(1,&quot;Trader Joes&quot;)' class='choose'>Ceasar Salad</button>"
     });
     var marker9 = new google.maps.Marker({  position: {lat: 37.871716,lng:-122.273230},content:"Trader Joe's", map: map});
     marker9.addListener('click', function() {
