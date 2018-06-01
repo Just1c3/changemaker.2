@@ -2,6 +2,7 @@ body {
     background-image: url("http://perfometer.org/wp-content/uploads/2015/09/innercowhero-1024x631.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
+    background-color: #4CAF50;
 }
 
 #calculate{
@@ -55,6 +56,7 @@ body {
     width:100%;
     z-index: 100000;
     background-color: gray;
+    position: absolute;
 }
 
 
