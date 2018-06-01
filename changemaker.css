@@ -36,6 +36,27 @@ body {
 
 }
 
+#anooshpic{
+    height:28%;
+    width:21%;
+    box-shadow: 3px 3px 3px 3px;
+    position: relative;
+
+}
+#Aboutushead{
+    position: relative;
+    width:30%;
+    top:0;
+    right: 35%;
+    background-color: #4CAF50;
+}
+#aboutusshow{
+    height:100%;
+    width:100%;
+    z-index: 100000;
+    background-color: gray;
+}
+
 
 #usinfo{
     margin-left: -4px;

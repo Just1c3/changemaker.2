@@ -1,8 +1,13 @@
 var logedInUserId="";
 var loggedInUserScore = 0;
+var loggedinuser={};
 
 
 $(document).ready(function(){
+
+    $("#usinfo").on("click",function(){
+        $("#aboutusshow").show();
+    });
     $(".hide").hide();
     $("#calculate").on("click",function(){
         $("#cloud").show();
@@ -106,6 +111,7 @@ function getuser(email){
             console.log("usergotten");
             console.log(data);
             logedInUserId = data._id;
+            loggedinuser=data;
             if(data.score){
                 loggedInUserScore = data.score;
             }
@@ -121,17 +127,16 @@ function getuser(email){
 }
 
 
-function addfield(amount) {
+function addfield(amount){
+
     if (loggedInUserScore > 0) {
+        loggedinuser.score+=amount;
         $.ajax({
             type: 'PUT',
             dataType: 'json',
-            data: JSON.stringify({
-                "score": (amount + loggedInUserScore)
-            }),
+            data: JSON.stringify(loggedinuser),
             success: function (data) {
                 console.log(data);
-
             },
             error: function () {
                 alert("failed");
@@ -139,15 +144,20 @@ function addfield(amount) {
             url: 'https://slkidsbackend.herokuapp.com/methpain/api/users/' + logedInUserId
         });
     }else{
+
+
         $.ajax({
             type: 'PUT',
             dataType: 'json',
             data: JSON.stringify({
-                "score": amount
+                "score": amount,
+                "email":loggedinuser.email,
+                "password":loggedinuser.password,
+                "_id":loggedinuser._id
             }),
             success: function (data) {
                 console.log(data);
-                console.log("added without points")
+                getuser(loggedinuser.email)
             },
             error: function () {
                 alert("failed");
