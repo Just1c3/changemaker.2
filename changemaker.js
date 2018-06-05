@@ -4,9 +4,14 @@ var loggedinuser={};
 
 
 $(document).ready(function(){
+    $("#exitshow").on("click",function(){
+        $("#aboutusshow").hide();
+    });
 
     $("#usinfo").on("click",function(){
         $("#aboutusshow").show();
+        $("#kaleninfo").text("Kalen Pecson: Junior At Berkeley High School, plays soccer, loves french rap and enjoys going surfing with his friends");
+        $("#anooshinfo").text("Anoosh Vafaei: Junior at Berkeley High School, enjoys playing Fortnite, spending his weekends cutting people’s hair, and loves men’s style.");
     });
     $(".hide").hide();
     $("#calculate").on("click",function(){

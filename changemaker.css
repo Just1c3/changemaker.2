@@ -36,22 +36,51 @@ body {
     right: 30%;
 
 }
+#Aboutushead{
+    position: absolute;
+    width:30%;
+    top:0;
+    right: 35%;
+    font-size: 100px;
+}
+#anooshinfo{
+    font-size: 30px;
+    position: absolute;
+    top: 420px;
+    left:25%;
+}
+#exitshow{
+    width:5%;
+    height:5%;
+    border: solid black;
+    font-size: 30px;
+}
+#kaleninfo{
+    font-size: 30px;
+    position: absolute;
+    top: 150px;
+    left:25%;
+}
 
 #anooshpic{
     height:28%;
     width:21%;
     box-shadow: 3px 3px 3px 3px;
-    position: relative;
+    position: absolute;
     margin-left: 10px;
+    top:400px;
+}
 
+#kalenpic{
+    top:100px;
+    height:28%;
+    width:21%;
+    box-shadow: 3px 3px 3px 3px;
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 40px;
 }
-#Aboutushead{
-    position: relative;
-    width:30%;
-    top:0;
-    right: 35%;
-    background-color: #4CAF50;
-}
+
 #aboutusshow{
     height:100%;
     width:100%;
