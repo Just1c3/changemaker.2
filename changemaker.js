@@ -192,5 +192,5 @@ function showenters(){
 
 var anoosh="";
 var kalen="";
-var mission="";
+var mission="\"We are VEGO. Our team, Anoosh Vafaei and Kalen Pecson are working to make VEGO available for the public to track their food footprint and ultimatley reduce their environmental impact by eating vegan options at resturants throughout Berkeley.\"";
 
