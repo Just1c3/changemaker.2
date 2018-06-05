@@ -9,6 +9,7 @@ $(document).ready(function(){
     });
 
     $("#usinfo").on("click",function(){
+        $("#head").css({"z-index":"10000"});
         $("#aboutusshow").show();
         $("#kaleninfo").text("Kalen Pecson: Junior At Berkeley High School, plays soccer, loves french rap and enjoys going surfing with his friends");
         $("#anooshinfo").text("Anoosh Vafaei: Junior at Berkeley High School, enjoys playing Fortnite, spending his weekends cutting people’s hair, and loves men’s style.");
@@ -63,6 +64,13 @@ $(document).ready(function(){
     $("#cancel").on("click",function(){
        $("#enter").hide();
        $("#mask").hide();
+    });
+
+
+    $("#extrainfo").on("click",function(){
+        $("#calculate").hide();
+        $("body").css({"background-image":"none"});
+        $("#infodiv").show();
     });
 
 });
@@ -137,22 +145,25 @@ function addfield(amount){
     if (loggedInUserScore > 0) {
         loggedinuser.score+=amount;
         $.ajax({
-            type: 'PUT',
+            type: 'POST',
             dataType: 'json',
-            data: JSON.stringify(loggedinuser),
+            data: JSON.stringify({
+                'userId': loggedinuser._id,
+                'score': amount //how much is being added to the score right now
+            }),
             success: function (data) {
                 console.log(data);
             },
             error: function () {
                 alert("failed");
             },
-            url: 'https://slkidsbackend.herokuapp.com/methpain/api/users/' + logedInUserId
+            url: 'https://slkidsbackend.herokuapp.com/methpain/api/users/'
         });
     }else{
 
 
         $.ajax({
-            type: 'PUT',
+            type: 'POST',
             dataType: 'json',
             data: JSON.stringify({
                 "score": amount,
@@ -167,7 +178,7 @@ function addfield(amount){
             error: function () {
                 alert("failed");
             },
-            url: 'https://slkidsbackend.herokuapp.com/methpain/api/users/' + logedInUserId
+            url: 'https://slkidsbackend.herokuapp.com/methpain/api/users/'
         });
     }
 
