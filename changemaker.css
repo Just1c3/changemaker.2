@@ -282,5 +282,11 @@ html, body {
     width:60%;
     height:40%;
     top:250px;
-    margin-right:
+    left: 20%;
+}
+#moreinfohead{
+    font-size: 40px;
+}
+a{
+    font-size: 30px;
 }

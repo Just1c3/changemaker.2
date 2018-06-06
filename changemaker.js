@@ -4,9 +4,14 @@ var loggedinuser={};
 
 
 $(document).ready(function(){
-    $("#exitshow").on("click",function(){
-        $("#aboutusshow").hide();
+
+
+    $("button").on("click",function(){
+        if($(this).attr("id")!="usinfo"){
+            $("#aboutusshow").hide();
+        }
     });
+
 
     $("#usinfo").on("click",function(){
         $("#head").css({"z-index":"10000"});
@@ -69,6 +74,7 @@ $(document).ready(function(){
 
     $("#extrainfo").on("click",function(){
         $("#calculate").hide();
+        $("#search").hide();
         $("body").css({"background-image":"none"});
         $("#infodiv").show();
     });
