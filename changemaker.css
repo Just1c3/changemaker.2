@@ -262,6 +262,7 @@ html, body {
     position: absolute;
     background-color: lightgreen;
     text-align: center;
+    border-radius: 10px 10px;
 }
 
 .i{
@@ -289,4 +290,20 @@ html, body {
 }
 a{
     font-size: 30px;
+}
+
+#congratulate{
+    font-size: 40px;
+    color: darkgreen;
+    border-radius: 10px 20px;
+    position: absolute;
+    width:40%;
+    height:65%;
+    top:30%;
+    right:30%;
+    z-index:12345;
+    background-image: url("https://openclipart.org/download/257462/Checkmark.svg");
+    background-color: lightgreen;
+    background-size: 100%;
+    background-repeat: no-repeat;
 }

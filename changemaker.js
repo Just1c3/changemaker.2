@@ -11,6 +11,15 @@ $(document).ready(function(){
             $("#aboutusshow").hide();
         }
     });
+    $("#validate").on("click",function(){
+        $("#showstats").hide();
+            $("#mask").show();
+            $("#congratulate").show();
+            setTimeout(function () {
+                $("#mask").hide();
+                $("#congratulate").hide();
+                },1300)
+    });
 
 
     $("#usinfo").on("click",function(){
